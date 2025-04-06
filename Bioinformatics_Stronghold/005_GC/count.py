@@ -13,9 +13,9 @@ TGGGAACCTGCGGGCAGTAGGTGGAAT
 # 讀入資料，將sequence存入dict
 sequences = dict()
 label = ""
-for line in data.splitlines():
+for line in data.splitlines():  # 等同做了 str.split("\n"), \r, \n\r...
     if line[0] == ">":
-        label = line[1:]
+        label = line[1:]  # 去除">"
         sequences[label] = ""
     else:
         sequences[label] += line
@@ -26,9 +26,9 @@ for label, seq in sequences.items():
     at_count = 0
     gc_count = 0
     for base in seq:
-        if base == 'A' or base == 'T':
+        if base == "A" or base == "T":
             at_count += 1
-        if base == 'C' or base == 'G':
+        if base == "C" or base == "G":
             gc_count += 1
     gc_ratio = gc_count / (at_count + gc_count) * 100
     if gc_ratio > max_gc_ratio:

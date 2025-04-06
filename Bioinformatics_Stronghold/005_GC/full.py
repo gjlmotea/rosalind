@@ -38,7 +38,7 @@ for line in data.splitlines():
     line = line.strip()  # 縮排防呆
     if line:
         if line[0] == ">":
-            label = line[1:].strip()
+            label = line[1:].strip()  # 去除label頭尾空白
             sequences[label] = ""
         else:
             if label:
