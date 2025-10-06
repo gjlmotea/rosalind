@@ -4,5 +4,4 @@ def rabbit_population(n, k):
         R, r = r, r + k * R
     return r
 
-
 print(rabbit_population(5, 3))
